@@ -1,5 +1,3 @@
-# tip-calculator
- 
 # Tip Calculator Project
 
 This is a simple tip calculator project created using HTML, CSS, and JavaScript. It serves as a beginner-friendly project to learn about DOM (Document Object Model) manipulation in JavaScript.
