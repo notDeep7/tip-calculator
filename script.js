@@ -17,10 +17,10 @@ const calculateBill = () => {
   //   console.log(tipAmount);
   // calculate the total (tip amount + bill)
   let totalAmount = tipAmount + billValue;
-  console.log(totalAmount);
+  // console.log(totalAmount);
   // calculate the per person total (total divided by number of people)
   let perPerson = totalAmount / numberOfPeople;
-  console.log(perPerson);
+  // console.log(perPerson);
   // update the perPersonTotal on DOM & show it to user
   perPersonTotal.innerText = `$${perPerson.toFixed(2)}`;
 };
@@ -28,7 +28,16 @@ const calculateBill = () => {
 // ** Splits the bill between more people **
 const increasePeople = () => {
   // increment the amount of people
+  numberOfPeople += 1;
+
   // update the DOM with the new number of people
+  if (numberOfPeople <= 10) {
+    // console.log(numberOfPeople);
+
+    numberOfPeopleDiv.innerText = numberOfPeople;
+    calculateBill();
+  } else {
+  }
   // calculate the bill based on the new number of people
 };
 
@@ -38,6 +47,12 @@ const decreasePeople = () => {
   // if amount is 1 or less simply return
   // (a.k.a you can't decrease the number of people to 0 or negative!)
   // decrement the amount of people
+  numberOfPeople -= 1;
   // update the DOM with the new number of people
+  if (numberOfPeople >= 1) {
+    numberOfPeopleDiv.innerText = numberOfPeople;
+    calculateBill();
+  } else {
+  }
   // calculate the bill based on the new number of people
 };
